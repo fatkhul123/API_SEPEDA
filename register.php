@@ -1,21 +1,19 @@
 <?php
 include("connect.php");
-if (isset($_POST['nama']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['noktp']) && isset($_POST['nohp']) && isset($_POST['alamat']) && isset($_POST['roleuser']) ) {
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['noktp']) && isset($_POST['nohp']) && isset($_POST['alamat'])) {
  
-  $nama = $_POST['nama'];
+  $nama = $_POST['username'];
   $email = $_POST['email'];
   $password = $_POST['password'];
   $nohp = $_POST['nohp'];
   $noktp = $_POST['noktp'];
   $alamat = $_POST['alamat'];
-  $Roleuser = $_POST['roleuser'];
 
-  
   $json["SENDER"] = array();
   $json["STATUS"] = array();
   $json["MESSAGE"] = array();
  
-    $sql = "INSERT INTO tbuser(nama, email, password, noktp, nohp, alamat, roleuser) VALUES ('$nama', '$email', '$password', '$noktp', '$nohp', '$alamat', '$roleuser')";
+    $sql = "INSERT INTO tbuser(username, email, password, noktp, nohp, alamat, roleuser) VALUES ('$nama', '$email', '$password', '$noktp', '$nohp', '$alamat', 'customer')";
     $result = mysqli_query($con, $sql);
     if ($result) {
       $json["STATUS"] = "1";
