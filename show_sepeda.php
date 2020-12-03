@@ -15,7 +15,6 @@ if ($result) {
         $array["jenis"] = $row['jenis'];
         $array["merk"] = $row['merk'];
         $array["hargasewa"] = $row['hargasewa'];
-        $array["gambar"] = $row['gambar'];
         array_push($json["PAYLOAD"]["DATA"], $array);
 
     }

@@ -5,8 +5,7 @@ $jenis = $_POST['jenis'];
 $merk = $_POST['merk'];
 $kode = $_POST['kode'];
 $hargasewa = $_POST['hargasewa'];
-$gambar = $_POST['gambar'];
-	$sql = "INSERT INTO tbsepeda ( jenis, merk, kode, hargasewa, gambar)  VALUES ('$jenis', '$merk', '$kode,'$hargasewa','$gambar)";
+	$sql = "INSERT INTO tbsepeda ( kode, jenis, merk,  hargasewa )  VALUES ('$kode','$jenis', '$merk', '$hargasewa')";
 	$json["hasil"]=array();
     if($con->query($sql) === TRUE) {
 		$json["hasil"]["respon"]=true;
